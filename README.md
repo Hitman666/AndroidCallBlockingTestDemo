@@ -236,3 +236,6 @@ This is how the app looks like in action, tested on the emulator and call trigge
 In this post, I showed you how to make a native Android app that can block certain numbers from calling you. I pointed out the blocker that I was facing, and I'm still searching a solution to hide a native incoming call popup that still sometimes shows up for a brief second before the call gets rejected.
 
 So, if you have any ideas, I'm open to suggestions 💪
+
+## License
+[MIT](LICENSE)
