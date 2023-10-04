@@ -1,12 +1,13 @@
 package com.example.nikola.callblockingtestdemo;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
 import java.lang.reflect.Method;
-import com.android.internal.telephony.ITelephony;
+import com.example.nikola.callblockingtestdemo.ITelephony;
 
 public class IncomingCallReceiver extends BroadcastReceiver {
     @Override
@@ -21,7 +22,7 @@ public class IncomingCallReceiver extends BroadcastReceiver {
 
                 TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
                 try {
-                    Method m = tm.getClass().getDeclaredMethod("getITelephony");
+                    @SuppressLint("SoonBlockedPrivateApi") Method m = tm.getClass().getDeclaredMethod("getITelephony");
 
                     m.setAccessible(true);
                     telephonyService = (ITelephony) m.invoke(tm);
